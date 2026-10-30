@@ -1,3 +1,11 @@
+server:
+  port: 9000
+
 spring:
   application:
     name: demo
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+          model: gpt-4o-mini

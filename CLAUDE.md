@@ -28,7 +28,7 @@ No linter or formatter is configured.
 
 ## Configuration
 
-Configuration lives in `src/main/resources/application.yaml` (YAML, not `.properties`). The OpenAI starter needs an API key at startup. Supply it with the `SPRING_AI_OPENAI_API_KEY` environment variable or `spring.ai.openai.api-key`, and never commit it. Without a key, app startup and the `@SpringBootTest` context-load test (`DemoApplicationTests`) will fail. Model options go under `spring.ai.openai.chat.options.*` (for example `model`, `temperature`).
+Configuration lives in `src/main/resources/application.yaml` (YAML, not `.properties`). The OpenAI starter needs an API key at startup. Supply it with the `SPRING_AI_OPENAI_API_KEY` environment variable or `spring.ai.openai.api-key`, and never commit it. Without a key, app startup and the `@SpringBootTest` context-load test (`DemoApplicationTests`) will fail. Model options go directly under `spring.ai.openai.chat.*` (for example `model`, `temperature`). The Spring AI 1.x `spring.ai.openai.chat.options.*` keys are deprecated in 2.0.
 
 ## Conventions
 
