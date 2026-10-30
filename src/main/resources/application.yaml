@@ -9,3 +9,5 @@ spring:
       api-key: ${OPENAI_API_KEY}
       chat:
           model: gpt-4o-mini
+          temperature: 0.7 # 답변의 일관성을 담당하는 부분 0 = 일관적 1 = 창의, 다양 왜 답이 매번 다른가에 대한 부분 (0.0~2.0)
+          max-tokens: 500 # token 상한선
