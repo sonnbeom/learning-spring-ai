@@ -25,6 +25,10 @@ public class MemoryChatService {
 
 
     public Flux<String> chatStream(String conversationId, String message) {
-        return null;
+        return chatClient.prompt()
+                .user(message)
+                .advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId))
+                .stream()
+                .content();
     }
 }

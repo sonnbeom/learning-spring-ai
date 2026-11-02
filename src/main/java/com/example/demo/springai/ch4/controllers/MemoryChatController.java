@@ -21,7 +21,7 @@ public class MemoryChatController {
     @GetMapping(value = "/{conversationId}/stream",
             produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> stream(@PathVariable String conversationId,
-                             @RequestBody String message){
+                             @RequestParam String message){
         return memoryChatService.chatStream(conversationId, message);
     }
 }
