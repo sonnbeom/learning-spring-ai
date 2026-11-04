@@ -52,6 +52,10 @@ public class PromptQualityController {
     public Map<String, String> outOfPolicy(
             @RequestParam(defaultValue = "OO쇼핑") String company,
             @RequestParam(defaultValue = "이 회사 주가 전망이 어떤가요?") String question) {
-        return null;
+        return Map.of(
+                "question", question,
+                "Answer", service.customerCenterBot(company, question),
+                "기대 동작", "상담원 연결을 도와드리겠습니다 라고 답해야 정상"
+        );
     }
 }

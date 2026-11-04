@@ -1,6 +1,7 @@
 package com.example.demo.springai.services;
 
 import com.example.demo.springai.ch4.dto.BeforeAfterResponse;
+import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -89,7 +90,8 @@ public class PromptQualityService {
      * 좋은 System Prompt의 4요소(역할·형식·제약·톤).
      * 고객센터 봇 예시를 외부 파일(system-customer-center.st)에서 읽어 {company}만 바인딩한다.
      */
-    public String customerCenterBot(String company, String question) {
+    public String  customerCenterBot(String company, String question) {
+        PromptTemplate template = new PromptTemplate(customerCenterResource);
         return null;
     }
 }
